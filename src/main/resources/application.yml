@@ -1,0 +1,25 @@
+server:
+  # \u670D\u52A1\u7AEF\u53E3
+  port: 8001
+spring:
+  application:
+    # \u670D\u52A1\u540D
+    name: eureka-server
+  security:
+    user:
+      name: lishunyi
+      password: 123456
+eureka:
+  instance:
+    # \u4E3B\u673A\u540D
+    hostname: localhsot
+  server:
+    # \u81EA\u6211\u4FDD\u62A4\u6A21\u5F0F\uFF0C\u9ED8\u8BA4\u4E3Atrue\uFF0C\u5173\u95EDfalse
+    enable-self-preservation: false
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+    # \u81EA\u8EAB\u4E0D\u6CE8\u518C\u5230\u6CE8\u518C\u4E2D\u5FC3
+    register-with-eureka: false
+    # \u6B64\u5BA2\u6237\u7AEF\u662F\u5426\u83B7\u53D6eureka\u670D\u52A1\u5668\u6CE8\u518C\u8868\u4E0A\u7684\u6CE8\u518C\u4FE1\u606F\uFF0C\u9ED8\u8BA4\u4E3Atrue\uFF0C\u5173\u95EDfalse
+    fetch-registry: false
