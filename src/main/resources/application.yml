@@ -12,7 +12,7 @@ spring:
 eureka:
   instance:
     # 服务主机名
-    hostname: localhsot
+    hostname: localhost
   server:
     # 关闭自保护
     enable-self-preservation: false
