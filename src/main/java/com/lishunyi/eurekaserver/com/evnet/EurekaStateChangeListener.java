@@ -19,18 +19,18 @@ public class EurekaStateChangeListener {
 
     @EventListener
     public void listen(EurekaInstanceCanceledEvent event) {
-        System.out.println("【服务下线】：" + "/t" + event.getServerId() + "/t" + event.getAppName() + "/t" + "下线了！");
+        System.out.println("【服务下线】：" + "\t" + event.getServerId() + "\t" + event.getAppName() + "\t" + "下线了！");
     }
 
     @EventListener
     public void listen(EurekaInstanceRegisteredEvent event) {
         InstanceInfo instanceInfo = event.getInstanceInfo();
-        System.out.println("【服务注册】：" + "/t" + instanceInfo.getAppName() + "/t" + "进行注册！");
+        System.out.println("【服务注册】：" + "\t" + instanceInfo.getAppName() + "\t" + "进行注册！");
     }
 
     @EventListener
     public void listen(EurekaInstanceRenewedEvent event) {
-        System.out.println("【服务续约】：" + "/t" + LocalTime.now() + event.getServerId() + "/t" + event.getAppName() + "/t" + "进行续约！");
+        System.out.println("【服务续约】：" + "\t" + LocalTime.now() + "\t" + event.getServerId() + "\t" + event.getAppName() + "\t" + "进行续约！");
     }
 
     @EventListener
